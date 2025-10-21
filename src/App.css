@@ -1,0 +1,13 @@
+.allContent{
+  display: flex;
+}
+
+.mainSection{
+  width: 125vh;
+  height: 100vh;
+  background-color: lightblue;
+}
+
+img{
+  max-height: 30vh;
+}
