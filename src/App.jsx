@@ -10,7 +10,6 @@ function App() {
     life_span: "Life Span",
   });
 
-  // const [toBan, setToBan] = useState([]);
   const [toBan, setToBan] = useState({});
   const [currentImage, setCurrentImage] = useState(
     "https://t4.ftcdn.net/jpg/08/61/16/03/360_F_861160368_4dvdmKSMD9Ye4iiul4x2wmOaKQQSZojV.jpg"
@@ -97,10 +96,10 @@ function App() {
     <>
       <div className="allContent">
         <div className="mainSection">
-          <h1>Cat Picture</h1>
+          <h1>Cat</h1>
           <button onClick={addToBanList}>{catInfo.name}</button>
-          <p>{catInfo.origin}</p>
-          <p>{catInfo.life_span}</p>
+          <p>Origin: {catInfo.origin}</p>
+          <p>Life Span: {catInfo.life_span}</p>
           <div className="imageContainer">
             <img src={currentImage} alt="A Random Cat" />
           </div>
@@ -108,7 +107,7 @@ function App() {
         </div>
 
         <div className="sidePanel">
-          <h2>Ban Info</h2>
+          <h2>Banned Breeds</h2>
           <div className="bannedCats">
             {Object.entries(toBan).map(([breedId, breedName]) => (
               <button key={breedId} onClick={() => deleteFromBanList(breedId)}>
@@ -123,20 +122,3 @@ function App() {
 }
 
 export default App;
-
-// https://api.thecatapi.com/v1/images/search?breed_ids!=beng for non bengal cats
-// https://api.thecatapi.com/v1/images/search?breed_name!=Bengal for non bengal cats
-// https://api.thecatapi.com/v1/images/8pCFG7gCV for more info
-// https://thatapicompany.com/a-guide-on-how-to-use-thecatapi/
-// https://api.thecatapi.com/v1/images/search?breed_name!=Bengal&breed_name!=Munchkin
-
-// names doesn't work, id does
-
-// name = Bengal
-// origin: United States
-// hairless: 0 or 1 (1 is hairless)
-// rare: 0 or 1 (1 is hairless)
-// use ones where length id > 3
-// only only one attribute has to be bannable
-// api_key=live_m2XAa87iP3wwDZIkrNDNms0N7xOE9On1TVqXl30Xonz240h11aWcJdHJDWKHdfWN
-// https://api.thecatapi.com/v1/images/rWr-g-QVX
